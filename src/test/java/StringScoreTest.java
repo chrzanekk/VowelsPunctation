@@ -36,4 +36,13 @@ public class StringScoreTest {
 
         assertEquals(4,result);
     }
+
+    @Test
+    public void testStringScoreWithoutAnyVowels() {
+        String sentence = "ddd z ddd";
+
+        int result = stringScore.vowelScore(sentence);
+
+        assertEquals(0,result);
+    }
 }

@@ -21,27 +21,27 @@ public class VowelCounterTest {
 
     @Test
     public void testStringWhitNoVowel() {
-        String word = "DDD";
+        String sentence = "DDD";
 
-        int result = vowelCounter.count(word);
+        int result = vowelCounter.count(sentence);
 
         assertEquals(0,result);
     }
 
     @Test
     public void testStringPunctationWhitOddVowel() {
-        String word = "Konrado";
+        String sentence = "Konrado";
 
-        int result = vowelCounter.punctation(vowelCounter.count(word));
+        int result = vowelCounter.punctation(vowelCounter.count(sentence));
 
         assertEquals(1,result);
     }
 
     @Test
     public void testStringPunctationWhitEvenVowel() {
-        String word = "Konrad";
+        String sentence = "Konrad";
 
-        int result = vowelCounter.punctation(vowelCounter.count(word));
+        int result = vowelCounter.punctation(vowelCounter.count(sentence));
 
         assertEquals(2,result);
     }
