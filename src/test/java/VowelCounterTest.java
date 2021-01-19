@@ -28,21 +28,5 @@ public class VowelCounterTest {
         assertEquals(0,result);
     }
 
-    @Test
-    public void testStringPunctationWhitOddVowel() {
-        String sentence = "Konrado";
 
-        int result = vowelCounter.punctation(vowelCounter.count(sentence));
-
-        assertEquals(1,result);
-    }
-
-    @Test
-    public void testStringPunctationWhitEvenVowel() {
-        String sentence = "Konrad";
-
-        int result = vowelCounter.punctation(vowelCounter.count(sentence));
-
-        assertEquals(2,result);
-    }
 }
