@@ -1,21 +1,15 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class StringScoreTest {
-    private static StringScore stringScore;
 
-    @Before
-    public void setUp() throws Exception {
-        stringScore = new StringScore(new VowelCounter(Vowels.listOfVowels()), new VowelScore());
-    }
 
     @Test
     public void testMultipleStringScoreWithOddAndEvenVowelsInSingleStrings() {
         String sentence = "Ala ma kota";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
 
         assertEquals(5, result);
     }
@@ -24,7 +18,7 @@ public class StringScoreTest {
     public void testMultipleStringScoreWithOddAndEvenVowelsResultIsOdd() {
         String sentence = "Yarek lubi koty";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
 
         assertEquals(5, result);
     }
@@ -33,7 +27,7 @@ public class StringScoreTest {
     public void testMultipleStringScoreWithOddAndEvenVowelsResultIsEven() {
         String sentence = "Ala z kotem";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
 
         assertEquals(4, result);
     }
@@ -42,7 +36,7 @@ public class StringScoreTest {
     public void testMultipleStringScoreWithoutAnyVowelsResultIsZero() {
         String sentence = "ddd z ddd";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
 
         assertEquals(0, result);
     }
@@ -51,7 +45,7 @@ public class StringScoreTest {
     public void testSingleStringScoreWhitOddVowels() {
         String sentence = "Konrado";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
 
         assertEquals(1, result);
     }
@@ -60,7 +54,7 @@ public class StringScoreTest {
     public void testSingleStringScoreWhitEvenVowels() {
         String sentence = "Konrad";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
 
         assertEquals(2, result);
     }
@@ -69,7 +63,25 @@ public class StringScoreTest {
     public void testSingleStringScoreWithoutVowels() {
         String sentence = "Kkk";
 
-        int result = stringScore.calculate(sentence);
+        int result = StringScore.calculate(sentence);
+
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void testStringScoreWithEmptyString() {
+        String sentence = "";
+
+        int result = StringScore.calculate(sentence);
+
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void testStringScoreWithNull() {
+        String sentence = "";
+
+        int result = StringScore.calculate(sentence);
 
         assertEquals(0, result);
     }
